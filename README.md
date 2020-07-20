@@ -29,14 +29,37 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+  You need to first build a constructor function, including the super keyword. You are then allowed to add state to your class component within the constructor function and initialize it with whatever your initial values are going to be.
 
 2. Describe the different phases of the component lifecycle.
+  Mounting -- This is where you put the elements into the DOM. When mounting a component, it is essential to call the render() method. It is also very beneficial to include the constuctor() method if you are to inherit from a parent component, a getDerivedStateFromProps() method, and a componentDidMount() method.
+  
+  Updating -- A component, whether it be a functional or class component, gets updated whenever there is a change in the component's state or props. It uses the methods getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate(), and componentDidUpdate().
+
+  Unmounting -- This is the "death" part of the component lifecycle. It is when a component is removed from the DOM, or in other words, unmounted. It uses componentWillUnmount().
 
 3. Demonstrate an understanding of class component lifecycle methods.
+  constructor() -- This is when the component is initiated and inherits props from any parent component. It is also when you are to initialize your state using this.state = {blah: 'blah'}.
+
+  getDerivedStateFromProps() -- "this is the natural place to set the state object based on the initial props" - w3schools.com. Basically, this is where you are to update any state, using props, that you are incorporating in your component. 
+
+  render() -- this is the method that actually outputs the HTML in your component to the DOM. It is what "renders", or displays, it to the DOM.
+
+  componentDidMount() -- This is where you can setState to update your state values.
+
+  componentDidUpdate() -- this is where you can operate on the DOM once the component has been updated.
+
+  componentWillUnmount() -- This is where your component is basically destroyed.
 
 4. Define stateful logic.
+  Stateful logic is basically any code that uses state. Using stateful logic with hooks can also be defined "as a behavior created with the use of one or more hooks. It is like a perk that you are adding to a component." - DoHn, stackoverflow.com
 
 5. Describe how to test a React component with React Testing Library.
+  You first need render the component or App you are wanting to test inside the built-in test() method. You then need to capture the DOM node you want to test on, and finally apply whatever test you are using on that node. The steps are Arrange, Act, Assert. 
+  Arrange -- arrange the test by setting up the code such that it can be tested.
+  Act -- calling a method or function that returns a result of interest to our test.
+  Assert -- we assert if our expected return matched the acctual return.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
